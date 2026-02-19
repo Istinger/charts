@@ -1,0 +1,43 @@
+<div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+  <div class="relative bg-clip-border rounded-xl overflow-hidden bg-transparent text-gray-700 shadow-none m-0 flex items-center justify-between p-6">
+    <div>
+      <h6 class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-blue-gray-900 mb-1">
+        Orders Overview
+      </h6>
+      <p class="antialiased font-sans text-sm leading-normal flex items-center gap-1 font-normal text-blue-gray-600">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" aria-hidden="true" class="h-4 w-4 text-green-500">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"></path>
+        </svg>
+        <strong>{{ summaryText }}</strong>
+      </p>
+    </div>
+    <button aria-expanded="false" aria-haspopup="menu" class="relative middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-8 max-w-[32px] h-8 max-h-[32px] rounded-lg text-xs text-blue-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30" type="button">
+      <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currenColor" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" aria-hidden="true" class="h-6 w-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z"></path>
+        </svg>
+      </span>
+    </button>
+  </div>
+  <div class="p-6 pt-0">
+    <div class="flex flex-col gap-4">
+      <div *ngFor="let order of orders" class="flex items-start gap-4">
+        <div class="relative p-1 after:absolute after:-bottom-6 after:left-2/4 after:w-0.5 after:h-4/6 after:bg-blue-gray-50 after:content-[''] after:-translate-x-2/4">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center bg-blue-gray-50">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" [class]="'w-5 h-5 ' + order.iconColor">
+              <path stroke-linecap="round" stroke-linejoin="round" [attr.d]="order.icon"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="flex-1">
+          <h6 class="block antialiased tracking-normal font-sans text-sm leading-normal font-semibold text-blue-gray-900">
+            {{ order.title }}
+          </h6>
+          <p class="block antialiased font-sans text-xs font-normal leading-normal text-gray-600">
+            {{ order.date }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md overflow-hidden">
+  <div class="bg-clip-border mx-4 rounded-xl overflow-visible bg-transparent text-gray-700 shadow-none absolute -mt-4 left-0 right-0 px-4 pt-4" style="height: 200px;">
+    <div style="height: 180px;">
+      <canvas baseChart
+        [data]="lineChartData"
+        [options]="lineChartOptions"
+        type="line">
+      </canvas>
+    </div>
+  </div>
+  
+  <div class="p-4" style="padding-top: 200px;">
+    <h6 class="block antialiased tracking-normal font-sans text-base font-semibold leading-relaxed text-blue-gray-900 mb-1">
+      Completed Tasks
+    </h6>
+    <p class="antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">
+      {{ completionRate }} {{ comparedToPeriod }}
+    </p>
+  </div>
+  
+  <div class="border-t border-blue-gray-50 p-4">
+    <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="inline h-4 w-4 text-blue-gray-400">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <span class="ml-1">just updated</span>
+    </p>
+  </div>
+</div>

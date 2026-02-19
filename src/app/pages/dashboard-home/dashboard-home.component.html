@@ -1,0 +1,19 @@
+<div class="mt-12">
+  <div class="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
+    <app-stat-card *ngFor="let card of statCards" [card]="card"></app-stat-card>
+  </div>
+  
+  <div class="mb-6 grid gap-y-6 gap-x-6 md:grid-cols-2 xl:grid-cols-3">
+    <app-daily-sales></app-daily-sales>
+    <app-completed-tasks></app-completed-tasks>
+  </div>
+
+  <div class="mb-6 grid grid-cols-1 gap-6 xl:grid-cols-2">
+    <app-projects-table class="xl:col-span-1"></app-projects-table>
+    <app-orders-overview class="xl:col-span-1"></app-orders-overview>
+  </div>
+
+  <div class="mb-4 grid grid-cols-1 gap-6">
+    <app-website-view></app-website-view>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
+  <div 
+    [class]="'bg-clip-border mx-4 rounded-xl overflow-hidden text-white shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center ' + card.gradient + ' ' + card.shadowColor">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-6 h-6 text-white">
+      <path *ngFor="let path of card.svgPath.split('|')" [attr.d]="path" [attr.fill-rule]="path.includes('evenodd') ? 'evenodd' : null" [attr.clip-rule]="path.includes('evenodd') ? 'evenodd' : null"></path>
+    </svg>
+  </div>
+  <div class="p-4 text-right">
+    <p class="block antialiased font-sans text-sm leading-normal font-normal text-blue-gray-600">
+      {{ card.title }}
+    </p>
+    <h4 class="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
+      {{ card.value }}
+    </h4>
+  </div>
+  <div class="border-t border-blue-gray-50 p-4">
+    <p class="block antialiased font-sans text-base leading-relaxed font-normal text-blue-gray-600">
+      <strong [class]="card.changeType === 'positive' ? 'text-green-500' : 'text-red-500'">
+        {{ card.change }}
+      </strong>&nbsp;than {{ card.period }}
+    </p>
+  </div>
+</div>
